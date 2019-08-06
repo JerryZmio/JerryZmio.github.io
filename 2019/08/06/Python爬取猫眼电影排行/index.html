@@ -6,15 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/8 | Gold Experience</title>
+  <title>Python爬取猫眼电影排行 | Gold Experience</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Gold Experience">
-<meta property="og:url" content="http://yoursite.com/archives/2019/08/index.html">
+  <meta name="description" content="Python爬取猫眼电影排行利用Requests库和正则表达式来抓取猫眼电影Top100的相关内容。requests库比urllib库更方便。">
+<meta name="keywords" content="爬虫，python，教程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python爬取猫眼电影排行">
+<meta property="og:url" content="http://yoursite.com/2019/08/06/Python爬取猫眼电影排行/index.html">
 <meta property="og:site_name" content="Gold Experience">
+<meta property="og:description" content="Python爬取猫眼电影排行利用Requests库和正则表达式来抓取猫眼电影Top100的相关内容。requests库比urllib库更方便。">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/.com//Python%E7%88%AC%E5%8F%96%E7%8C%AB%E7%9C%BC%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%5C%E7%8C%AB%E7%9C%BC%E6%8E%92%E8%A1%8C%E9%A1%B5%E9%9D%A2.png">
+<meta property="og:image" content="http://yoursite.com/.com//Python%E7%88%AC%E5%8F%96%E7%8C%AB%E7%9C%BC%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%5C%E7%8C%AB%E7%9C%BC%E6%8E%92%E8%A1%8C%E9%A1%B5%E9%9D%A2.png">
+<meta property="og:image" content="http://yoursite.com/.com//Python%E7%88%AC%E5%8F%96%E7%8C%AB%E7%9C%BC%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%5C%E7%BD%91%E9%A1%B5%E6%BA%90%E7%A0%81.png">
+<meta property="og:image" content="http://yoursite.com/.com//Python%E7%88%AC%E5%8F%96%E7%8C%AB%E7%9C%BC%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%5C%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png">
+<meta property="og:updated_time" content="2019-08-06T13:11:55.513Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Gold Experience">
+<meta name="twitter:title" content="Python爬取猫眼电影排行">
+<meta name="twitter:description" content="Python爬取猫眼电影排行利用Requests库和正则表达式来抓取猫眼电影Top100的相关内容。requests库比urllib库更方便。">
+<meta name="twitter:image" content="http://yoursite.com/.com//Python%E7%88%AC%E5%8F%96%E7%8C%AB%E7%9C%BC%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%5C%E7%8C%AB%E7%9C%BC%E6%8E%92%E8%A1%8C%E9%A1%B5%E9%9D%A2.png">
   
     <link rel="alternative" href="/atom.xml" title="Gold Experience" type="application/atom+xml">
   
@@ -154,36 +164,161 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Python爬取猫眼电影排行" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/06/Python爬取猫眼电影排行/" class="archive-article-date">
-  	<time datetime="2019-08-06T11:58:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-06</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/06/Python爬取猫眼电影排行/">Python爬取猫眼电影排行</a>
+    <h1 class="article-title" itemprop="name">
+      Python爬取猫眼电影排行
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/08/06/Python爬取猫眼电影排行/" class="archive-article-date">
+  	<time datetime="2019-08-06T11:58:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Python爬取猫眼电影排行"><a href="#Python爬取猫眼电影排行" class="headerlink" title="Python爬取猫眼电影排行"></a>Python爬取猫眼电影排行</h1><p>利用Requests库和正则表达式来抓取猫眼电影Top100的相关内容。requests库比urllib库更方便。   </p>
+<a id="more"></a>  
+<h2 id="1-本次目标"><a href="#1-本次目标" class="headerlink" title="1.本次目标"></a>1.本次目标</h2><p>提取出猫眼电影Top100的电影名称，时间，评分，，图片等信息，提取的内容会以文件形式保存下来。  </p>
+<h2 id="2-准备工作"><a href="#2-准备工作" class="headerlink" title="2.准备工作"></a>2.准备工作</h2><p>安装Requests库。  </p>
+<h2 id="3-抓取分析"><a href="#3-抓取分析" class="headerlink" title="3.抓取分析"></a>3.抓取分析</h2><p>目标网页<a href="http://maoyan.com/board/4" target="_blank" rel="noopener">猫眼电影</a>，打开之后可以看到榜单信息<br><img src="/.com//Python%E7%88%AC%E5%8F%96%E7%8C%AB%E7%9C%BC%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%5C%E7%8C%AB%E7%9C%BC%E6%8E%92%E8%A1%8C%E9%A1%B5%E9%9D%A2.png" alt="猫眼电影排行页面"><br>排名第一的是《霸王别姬》页面中显示的有效信息有影片名称，主演，上映时间，上映地区，评分，图片等信息。<br>将网页滚动到最下方，发现有分页的列表，直接点击第2页，观察页面的URL和内容发生了怎样的变化，如图<br><img src="/.com//Python%E7%88%AC%E5%8F%96%E7%8C%AB%E7%9C%BC%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%5C%E7%8C%AB%E7%9C%BC%E6%8E%92%E8%A1%8C%E9%A1%B5%E9%9D%A2.png" alt="猫眼第二页"><br>此页面的URL变成<em><a href="https://maoyan.com/board/4?offset=10" target="_blank" rel="noopener">https://maoyan.com/board/4?offset=10</a></em><br>比之前的URL多了一个参数<strong>offset=10</strong>，而页面显示的是排行11<del>20名的电影，初步推断这是一个偏移量参数。再点击下一页发现页面的URL中的参数offset变成了20，显示的结果也是21</del>30名的电影。<br>由此推断，offset代表偏移量，如果偏移量为n，则显示n+1~n+10，每页显示10个，所以想获取Top100只需要分开请求10次即可。  </p>
+<h2 id="4-抓取第一页"><a href="#4-抓取第一页" class="headerlink" title="4.抓取第一页"></a>4.抓取第一页</h2><p>实现get_one_page()方法，并传入url参数，然后将抓取结果返回，通过mian()方法调用，代码如下：  </p>
+<pre><code class="python"><span class="keyword">import</span> requests
+<span class="function"><span class="keyword">def</span> <span class="title">get_one_page</span><span class="params">(url)</span>:</span>
+    <span class="keyword">try</span>:
+        headers = {
+            <span class="string">'User-Agent'</span>:<span class="string">'Mozilla/5.0(Macintosh;Intel Mac Os X10_13_3)Applewebkit/537.36(KHTML,LikeGecko)Chrome/65.0.3325.162 Safari/537.36'</span>}
+        response = requests.get(url,headers = headers)
+        <span class="keyword">if</span> response.status_code == <span class="number">200</span>:
+            <span class="keyword">return</span> response.text
+        <span class="keyword">return</span> <span class="literal">None</span>  
+    <span class="function"><span class="keyword">def</span> <span class="title">mian</span><span class="params">()</span>:</span>
+        url = <span class="string">'http://maoyan.com/board/4'</span>
+        html = get_one_page(url)
+        print(html)  
+main()</code></pre>
+<p>这一步运行之后，就可以获取首页的源代码了，下一步就是解析源代码，获取想要的信息。  </p>
+<h2 id="5-正则提取"><a href="#5-正则提取" class="headerlink" title="5.正则提取"></a>5.正则提取</h2><p>F12进入开发者模式后，在network中查看源代码。<br><img src="/.com//Python%E7%88%AC%E5%8F%96%E7%8C%AB%E7%9C%BC%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%5C%E7%BD%91%E9%A1%B5%E6%BA%90%E7%A0%81.png" alt="网页源码"><br><strong>注意</strong>这里不要再Elements选项卡中直接查看源码，因为那里的源码有可能经过JS处理而有所不同。<br>通过上图可以看到一部电影信息对应一个<dd>节点，使用正则表达式来提取排名，图片，名称，主演，发布时间，评分等内容。此时正则表达式改写如下:  </dd></p>
+<pre><code>&lt;dd&gt;.*?board-index.*?&gt;(.*?)&lt;/i&gt;.*?data-src=&quot;(.*?)&quot;.*?name.*?a.*?&gt;(.*?)&lt;/a&gt;.*?star.*?&gt;(.*?)&lt;/p&gt;.*?releasetime.*?&gt;(.*?)&lt;/p&gt;.*?integer.*?&gt;(.*?)&lt;/i&gt;.*?fraction.*?&gt;(.*?)&lt;/i&gt;.*?&lt;/dd&gt;  </code></pre><p>最后通过findall()方法提取出所有内容。<br>接下来，定义解析页面的方法parse_one_page(),主要是通过正则表达式来从结果中提取出所有的内容。将代码梳理一下，遍历提取结果并生成字典，实现代码如下:  </p>
+<pre><code class="python"><span class="function"><span class="keyword">def</span> <span class="title">parse_one_page</span><span class="params">(html)</span>:</span>
+    pattern = re.compile(
+         <span class="string">'&lt;dd&gt;.*?board-index.*?&gt;(.*?)&lt;/i&gt;.*?data-src="(.*?)".*?name.*?a.*?&gt;(.*?)&lt;/a&gt;.*?star.*?&gt;(.*?)&lt;/p&gt;.*?releasetime.*?&gt;(.*?)&lt;/p&gt;.*?integer.*?&gt;(.*?)&lt;/i&gt;.*?fraction.*?&gt;(.*?)&lt;/i&gt;.*?&lt;/dd&gt;'</span>,re.S)
+    items = re.findall(pattern,html)
+    <span class="keyword">for</span> item <span class="keyword">in</span> items:
+        <span class="keyword">yield</span>{
+            <span class="string">'index'</span>:item[<span class="number">0</span>],
+            <span class="string">'image'</span>:item[<span class="number">1</span>],
+            <span class="string">'title'</span>:item[<span class="number">2</span>].strip(),
+            <span class="string">'actor'</span>:item[<span class="number">3</span>].strip()[<span class="number">3</span>:],
+            <span class="string">'time'</span>:item[<span class="number">4</span>].strip()[<span class="number">5</span>:],
+            <span class="string">'score'</span>:item[<span class="number">5</span>].strip() + item[<span class="number">6</span>]
+        }</code></pre>
+<p>到此为止，我们已经成功的提取了单页的电影信息。  </p>
+<h2 id="6-写入文件"><a href="#6-写入文件" class="headerlink" title="6.写入文件"></a>6.写入文件</h2><p>通过JSON库的dumps()方法实现字典的序列化，并指定ensure_ascii参数为false，这样可以保证输出结果是中文形式而不是Unicode编码。代码如下:</p>
+<pre><code class="python"><span class="function"><span class="keyword">def</span> <span class="title">write_to_file</span><span class="params">(content)</span>:</span>
+    <span class="keyword">with</span> open(<span class="string">'result.txt'</span>,<span class="string">'a'</span>,encoding = <span class="string">'utf-8'</span>) <span class="keyword">as</span> f:
+        f.write(json.dumps(content,ensure_ascii = <span class="literal">False</span>)+<span class="string">'\n'</span>)</code></pre>
+<h2 id="7-整合代码"><a href="#7-整合代码" class="headerlink" title="7.整合代码"></a>7.整合代码</h2><p>最后实现main()方法来调用。  </p>
+<pre><code class="python"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">(offset)</span>:</span>
+    url = <span class="string">'http://maoyan.com/board/4?offset='</span> + str(offset)
+    html = get_one_page(url)
+    <span class="keyword">for</span> item <span class="keyword">in</span> parse_one_page(html):
+        print(item)
+        write_to_file(item)</code></pre>
+<h2 id="8-分页爬取"><a href="#8-分页爬取" class="headerlink" title="8.分页爬取"></a>8.分页爬取</h2><p>因为需要爬取Top100的电影，所以给这个链接传入offset参数，实现其他90部电影的爬取，此时添加如下调用即可:</p>
+<pre><code class="python"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:
+    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):
+        main(offset = i*<span class="number">10</span>)
+        time.sleep(<span class="number">1</span>)
+</code></pre>
+<p>到此为止，我们的小爬虫就完成了，整理代码如下:</p>
+<pre><code class="python"><span class="keyword">import</span> requests
+<span class="keyword">import</span> re
+<span class="keyword">import</span> json
+<span class="keyword">import</span> time
+<span class="keyword">from</span> requests.exceptions <span class="keyword">import</span> RequestException
+
+
+<span class="function"><span class="keyword">def</span> <span class="title">get_one_page</span><span class="params">(url)</span>:</span>
+    <span class="keyword">try</span>:
+        headers = {
+            <span class="string">'User-Agent'</span>:<span class="string">'Mozilla/5.0(Macintosh;Intel Mac Os X10_13_3)Applewebkit/537.36(KHTML,LikeGecko)Chrome/65.0.3325.162 Safari/537.36'</span>}
+        response = requests.get(url,headers = headers)
+        <span class="keyword">if</span> response.status_code == <span class="number">200</span>:
+            <span class="keyword">return</span> response.text
+        <span class="keyword">return</span> <span class="literal">None</span>
+    <span class="keyword">except</span> RequestException:
+        <span class="keyword">return</span> <span class="literal">None</span>
+
+<span class="function"><span class="keyword">def</span> <span class="title">parse_one_page</span><span class="params">(html)</span>:</span>
+    pattern = re.compile(
+         <span class="string">'&lt;dd&gt;.*?board-index.*?&gt;(.*?)&lt;/i&gt;.*?data-src="(.*?)".*?name.*?a.*?&gt;(.*?)&lt;/a&gt;.*?star.*?&gt;(.*?)&lt;/p&gt;.*?releasetime.*?&gt;(.*?)&lt;/p&gt;.*?integer.*?&gt;(.*?)&lt;/i&gt;.*?fraction.*?&gt;(.*?)&lt;/i&gt;.*?&lt;/dd&gt;'</span>,re.S)
+    items = re.findall(pattern,html)
+    <span class="keyword">for</span> item <span class="keyword">in</span> items:
+        <span class="keyword">yield</span>{
+            <span class="string">'index'</span>:item[<span class="number">0</span>],
+            <span class="string">'image'</span>:item[<span class="number">1</span>],
+            <span class="string">'title'</span>:item[<span class="number">2</span>].strip(),
+            <span class="string">'actor'</span>:item[<span class="number">3</span>].strip()[<span class="number">3</span>:],
+            <span class="string">'time'</span>:item[<span class="number">4</span>].strip()[<span class="number">5</span>:],
+            <span class="string">'score'</span>:item[<span class="number">5</span>].strip() + item[<span class="number">6</span>]
+        }
+
+<span class="function"><span class="keyword">def</span> <span class="title">write_to_file</span><span class="params">(content)</span>:</span>
+    <span class="keyword">with</span> open(<span class="string">'result.txt'</span>,<span class="string">'a'</span>,encoding = <span class="string">'utf-8'</span>) <span class="keyword">as</span> f:
+        f.write(json.dumps(content,ensure_ascii = <span class="literal">False</span>)+<span class="string">'\n'</span>)
+
+<span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">(offset)</span>:</span>
+    url = <span class="string">'http://maoyan.com/board/4?offset='</span> + str(offset)
+    html = get_one_page(url)
+    <span class="keyword">for</span> item <span class="keyword">in</span> parse_one_page(html):
+        print(item)
+        write_to_file(item)
+
+<span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:
+    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):
+        main(offset = i*<span class="number">10</span>)
+        time.sleep(<span class="number">1</span>)
+
+</code></pre>
+<p>运行结果如下：<br><img src="/.com//Python%E7%88%AC%E5%8F%96%E7%8C%AB%E7%9C%BC%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%5C%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png" alt="运行结果"><br>大功告成！  </p>
+<h2 id="10-本节代码"><a href="#10-本节代码" class="headerlink" title="10.本节代码"></a>10.本节代码</h2><p>本节代码地址为:<a href="https://github.com/JerryZmio/python_webspider" target="_blank" rel="noopener">https://github.com/JerryZmio/python_webspider</a><br>本节是一个简单的实例，希望大家对爬虫的实现有一个基本的思路，也对正则的用法有更深一步的了解。  </p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -195,61 +330,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/06/Python爬取猫眼电影排行/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/05/MarkDown语法笔记（一）/" class="archive-article-date">
-  	<time datetime="2019-08-05T14:11:52.709Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-05</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/05/开发工具分享/" class="archive-article-date">
-  	<time datetime="2019-08-05T14:11:52.709Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-05</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+  
+    <a href="/2019/08/05/MarkDown语法笔记（一）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -272,8 +452,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
