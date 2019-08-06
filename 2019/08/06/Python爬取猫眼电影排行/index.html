@@ -20,7 +20,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/08/06/Python爬取猫眼电影排行/Python%E7%88%AC%E5%8F%96%E7%8C%AB%E7%9C%BC%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%5C%E7%8C%AB%E7%9C%BC%E6%8E%92%E8%A1%8C%E9%A1%B5%E9%9D%A2.png">
 <meta property="og:image" content="http://yoursite.com/2019/08/06/Python爬取猫眼电影排行/Python%E7%88%AC%E5%8F%96%E7%8C%AB%E7%9C%BC%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%5C%E7%BD%91%E9%A1%B5%E6%BA%90%E7%A0%81.png">
 <meta property="og:image" content="http://yoursite.com/2019/08/06/Python爬取猫眼电影排行/Python%E7%88%AC%E5%8F%96%E7%8C%AB%E7%9C%BC%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%5C%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png">
-<meta property="og:updated_time" content="2019-08-06T13:11:55.513Z">
+<meta property="og:updated_time" content="2019-08-06T13:21:07.750Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python爬取猫眼电影排行">
 <meta name="twitter:description" content="Python爬取猫眼电影排行利用Requests库和正则表达式来抓取猫眼电影Top100的相关内容。requests库比urllib库更方便。">
@@ -188,7 +188,7 @@
 <a id="more"></a>  
 <h2 id="1-本次目标"><a href="#1-本次目标" class="headerlink" title="1.本次目标"></a>1.本次目标</h2><p>提取出猫眼电影Top100的电影名称，时间，评分，，图片等信息，提取的内容会以文件形式保存下来。  </p>
 <h2 id="2-准备工作"><a href="#2-准备工作" class="headerlink" title="2.准备工作"></a>2.准备工作</h2><p>安装Requests库。  </p>
-<h2 id="3-抓取分析"><a href="#3-抓取分析" class="headerlink" title="3.抓取分析"></a>3.抓取分析</h2><p>目标网页<a href="http://maoyan.com/board/4" target="_blank" rel="noopener">猫眼电影</a>，打开之后可以看到榜单信息<br><img src="//yoursite.com/2019/08/06/Python爬取猫眼电影排行/Python%E7%88%AC%E5%8F%96%E7%8C%AB%E7%9C%BC%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%5C%E7%8C%AB%E7%9C%BC%E6%8E%92%E8%A1%8C%E9%A1%B5%E9%9D%A2.png" alt="猫眼电影排行页面"><br>排名第一的是《霸王别姬》页面中显示的有效信息有影片名称，主演，上映时间，上映地区，评分，图片等信息。<br>将网页滚动到最下方，发现有分页的列表，直接点击第2页，观察页面的URL和内容发生了怎样的变化，如图<br><img src="//yoursite.com/2019/08/06/Python爬取猫眼电影排行/Python%E7%88%AC%E5%8F%96%E7%8C%AB%E7%9C%BC%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%5C%E7%8C%AB%E7%9C%BC%E6%8E%92%E8%A1%8C%E9%A1%B5%E9%9D%A2.png" alt="猫眼第二页"><br>此页面的URL变成<em><a href="https://maoyan.com/board/4?offset=10" target="_blank" rel="noopener">https://maoyan.com/board/4?offset=10</a></em><br>比之前的URL多了一个参数<strong>offset=10</strong>，而页面显示的是排行11<del>20名的电影，初步推断这是一个偏移量参数。再点击下一页发现页面的URL中的参数offset变成了20，显示的结果也是21</del>30名的电影。<br>由此推断，offset代表偏移量，如果偏移量为n，则显示n+1~n+10，每页显示10个，所以想获取Top100只需要分开请求10次即可。  </p>
+<h2 id="3-抓取分析"><a href="#3-抓取分析" class="headerlink" title="3.抓取分析"></a>3.抓取分析</h2><p>目标网页<a href="http://maoyan.com/board/4" target="_blank" rel="noopener">猫眼电影</a>，打开之后可以看到榜单信息<br><img src="/2019/08/06/Python爬取猫眼电影排行/Python%E7%88%AC%E5%8F%96%E7%8C%AB%E7%9C%BC%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%5C%E7%8C%AB%E7%9C%BC%E6%8E%92%E8%A1%8C%E9%A1%B5%E9%9D%A2.png" alt="猫眼电影排行页面"><br>排名第一的是《霸王别姬》页面中显示的有效信息有影片名称，主演，上映时间，上映地区，评分，图片等信息。<br>将网页滚动到最下方，发现有分页的列表，直接点击第2页，观察页面的URL和内容发生了怎样的变化，如图<br><img src="/2019/08/06/Python爬取猫眼电影排行/Python%E7%88%AC%E5%8F%96%E7%8C%AB%E7%9C%BC%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%5C%E7%8C%AB%E7%9C%BC%E6%8E%92%E8%A1%8C%E9%A1%B5%E9%9D%A2.png" alt="猫眼第二页"><br>此页面的URL变成<em><a href="https://maoyan.com/board/4?offset=10" target="_blank" rel="noopener">https://maoyan.com/board/4?offset=10</a></em><br>比之前的URL多了一个参数<strong>offset=10</strong>，而页面显示的是排行11<del>20名的电影，初步推断这是一个偏移量参数。再点击下一页发现页面的URL中的参数offset变成了20，显示的结果也是21</del>30名的电影。<br>由此推断，offset代表偏移量，如果偏移量为n，则显示n+1~n+10，每页显示10个，所以想获取Top100只需要分开请求10次即可。  </p>
 <h2 id="4-抓取第一页"><a href="#4-抓取第一页" class="headerlink" title="4.抓取第一页"></a>4.抓取第一页</h2><p>实现get_one_page()方法，并传入url参数，然后将抓取结果返回，通过mian()方法调用，代码如下：  </p>
 <pre><code class="python"><span class="keyword">import</span> requests
 <span class="function"><span class="keyword">def</span> <span class="title">get_one_page</span><span class="params">(url)</span>:</span>
@@ -205,7 +205,7 @@
         print(html)  
 main()</code></pre>
 <p>这一步运行之后，就可以获取首页的源代码了，下一步就是解析源代码，获取想要的信息。  </p>
-<h2 id="5-正则提取"><a href="#5-正则提取" class="headerlink" title="5.正则提取"></a>5.正则提取</h2><p>F12进入开发者模式后，在network中查看源代码。<br><img src="//yoursite.com/2019/08/06/Python爬取猫眼电影排行/Python%E7%88%AC%E5%8F%96%E7%8C%AB%E7%9C%BC%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%5C%E7%BD%91%E9%A1%B5%E6%BA%90%E7%A0%81.png" alt="网页源码"><br><strong>注意</strong>这里不要再Elements选项卡中直接查看源码，因为那里的源码有可能经过JS处理而有所不同。<br>通过上图可以看到一部电影信息对应一个<dd>节点，使用正则表达式来提取排名，图片，名称，主演，发布时间，评分等内容。此时正则表达式改写如下:  </dd></p>
+<h2 id="5-正则提取"><a href="#5-正则提取" class="headerlink" title="5.正则提取"></a>5.正则提取</h2><p>F12进入开发者模式后，在network中查看源代码。<br><img src="/2019/08/06/Python爬取猫眼电影排行/Python%E7%88%AC%E5%8F%96%E7%8C%AB%E7%9C%BC%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%5C%E7%BD%91%E9%A1%B5%E6%BA%90%E7%A0%81.png" alt="网页源码"><br><strong>注意</strong>这里不要再Elements选项卡中直接查看源码，因为那里的源码有可能经过JS处理而有所不同。<br>通过上图可以看到一部电影信息对应一个<dd>节点，使用正则表达式来提取排名，图片，名称，主演，发布时间，评分等内容。此时正则表达式改写如下:  </dd></p>
 <pre><code>&lt;dd&gt;.*?board-index.*?&gt;(.*?)&lt;/i&gt;.*?data-src=&quot;(.*?)&quot;.*?name.*?a.*?&gt;(.*?)&lt;/a&gt;.*?star.*?&gt;(.*?)&lt;/p&gt;.*?releasetime.*?&gt;(.*?)&lt;/p&gt;.*?integer.*?&gt;(.*?)&lt;/i&gt;.*?fraction.*?&gt;(.*?)&lt;/i&gt;.*?&lt;/dd&gt;  </code></pre><p>最后通过findall()方法提取出所有内容。<br>接下来，定义解析页面的方法parse_one_page(),主要是通过正则表达式来从结果中提取出所有的内容。将代码梳理一下，遍历提取结果并生成字典，实现代码如下:  </p>
 <pre><code class="python"><span class="function"><span class="keyword">def</span> <span class="title">parse_one_page</span><span class="params">(html)</span>:</span>
     pattern = re.compile(
@@ -288,7 +288,7 @@ main()</code></pre>
         time.sleep(<span class="number">1</span>)
 
 </code></pre>
-<p>运行结果如下：<br><img src="//yoursite.com/2019/08/06/Python爬取猫眼电影排行/Python%E7%88%AC%E5%8F%96%E7%8C%AB%E7%9C%BC%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%5C%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png" alt="运行结果"><br>大功告成！  </p>
+<p>运行结果如下：<br><img src="/2019/08/06/Python爬取猫眼电影排行/Python%E7%88%AC%E5%8F%96%E7%8C%AB%E7%9C%BC%E7%94%B5%E5%BD%B1%E6%8E%92%E8%A1%8C%5C%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C.png" alt="运行结果"><br>大功告成！  </p>
 <h2 id="10-本节代码"><a href="#10-本节代码" class="headerlink" title="10.本节代码"></a>10.本节代码</h2><p>本节代码地址为:<a href="https://github.com/JerryZmio/python_webspider" target="_blank" rel="noopener">https://github.com/JerryZmio/python_webspider</a><br>本节是一个简单的实例，希望大家对爬虫的实现有一个基本的思路，也对正则的用法有更深一步的了解。  </p>
 
       
