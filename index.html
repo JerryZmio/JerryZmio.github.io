@@ -161,6 +161,96 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-BeautifulSoup学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/18/BeautifulSoup学习笔记/">BeautifulSoup学习笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/18/BeautifulSoup学习笔记/" class="archive-article-date">
+  	<time datetime="2019-08-18T07:10:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">soup = BeautifulSoup(html,<span class="string">'lxml'</span>)````  </span><br><span class="line">&lt;!-- more --&gt;  </span><br><span class="line"></span><br><span class="line">+ <span class="comment">### P节点内容   </span></span><br><span class="line">````python  </span><br><span class="line">print(soup.p.string)````  </span><br><span class="line"></span><br><span class="line">+ <span class="comment">### P节点属性*1  </span></span><br><span class="line">````python  </span><br><span class="line">print(soup.p.attrs)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h3 id="P节点属性-2"><a href="#P节点属性-2" class="headerlink" title="P节点属性*2"></a>P节点属性*2</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(soup.p[<span class="string">'class'</span>])</span><br></pre></td></tr></table></figure>
+</li>
+<li><h3 id="a节点直接子节点"><a href="#a节点直接子节点" class="headerlink" title="a节点直接子节点"></a>a节点直接子节点</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(soup.a.contents)</span><br></pre></td></tr></table></figure>
+</li>
+<li><h3 id="下一个兄弟节点"><a href="#下一个兄弟节点" class="headerlink" title="下一个兄弟节点"></a>下一个兄弟节点</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(soup.p.next_siblings)</span><br></pre></td></tr></table></figure>
+</li>
+<li><h3 id="前面的兄弟节点"><a href="#前面的兄弟节点" class="headerlink" title="前面的兄弟节点"></a>前面的兄弟节点</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(soup.p.previou_siblings)</span><br></pre></td></tr></table></figure>
+</li>
+<li><h3 id="P节点的直接父节点"><a href="#P节点的直接父节点" class="headerlink" title="P节点的直接父节点"></a>P节点的直接父节点</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">print(soup.p.parent)````  </span><br><span class="line"> + 祖先节点使用parents方法 </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 方法选择器</span></span><br><span class="line"></span><br><span class="line"><span class="comment">### findall()</span></span><br><span class="line"><span class="comment">##### API如下  </span></span><br><span class="line">````python  </span><br><span class="line">find_all(name,attrs,recursive,text,**kwargs)````  </span><br><span class="line">````python</span><br><span class="line">a = soup.find_all(attrs = <span class="string">'list_app_title'</span>)</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">beautifulsoup,笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/18/BeautifulSoup学习笔记/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+  
     <article id="post-Python爬取猫眼电影排行" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -434,6 +524,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">beautifulsoup,笔记</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">爬虫，python，教程</a>
